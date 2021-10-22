@@ -1,0 +1,214 @@
+   if game.PlaceId == 6229116934 then
+        local Library =
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("Hoopz By Legend HandlesYT", "Sentinel")
+
+        -- MAIN
+        local Main = Window:NewTab("Main")
+        local MainSection = Main:NewSection("Main")
+
+MainSection:NewButton("noclip (K)", "Into walls", function()
+    noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+ 
+if key == "k" then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+print('Loaded')
+print('Press "K" to noclip')("Clicked")
+end)
+
+        MainSection:NewButton(
+            "(Remove Building (Less Lag)",
+            "This Will Remove the Building and etc",
+            function()
+                game.workspace.Map["Practice Area"]:Destroy()
+
+                game.workspace.Map["Lounge"]:Destroy()
+
+                game.workspace.Map["Grass"]:Destroy()
+
+                game.workspace.Map["Lounge Area"]:Destroy()
+
+                game.workspace["Practice Place"]:Destroy()
+
+                game.workspace["Extra"]:Destroy()
+
+                game.workspace["Leaderboards"]:Destroy()("Clicked")
+            end
+        )
+
+        MainSection:NewButton(
+            "Bypass",
+            "This is For When You Are Speeding so Mods Won't see Your Logs",
+            function()
+                print("Clicked")
+            end
+        )
+
+        MainSection:NewButton(
+            "Looms Aimbot",
+            "Press The Circle in The Bottom Left",
+            function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Loompic/Hoopz-Aimlock/main/Aimlock"))()(
+                    "Clicked"
+                )
+            end
+        )
+
+        MainSection:NewButton(
+            "Speed Boost",
+            "This one you Don't need The Bypass",
+            function()
+                local screen = Instance.new("ScreenGui",game.CoreGui)
+	local frame = Instance.new("Frame", screen)
+	local frame2 = Instance.new("Frame", frame)
+	local creds = Instance.new("TextLabel",frame2)
+	local controls = Instance.new("TextLabel",frame)
+	local qq = Instance.new("TextLabel",frame)
+	local rr = Instance.new("TextLabel",frame)
+	local ff = Instance.new("TextLabel",frame)
+	local closer = Instance.new("TextLabel",frame)
+	local closegui = Instance.new("TextButton", frame)
+
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+	local parted = false
+
+
+	local part = Instance.new("Part",game.Lighting)
+	part.Anchored = true
+	part.Size = Vector3.new(700,1,700)
+	part.Transparency = 0.9
+	part.TopSurface = "Smooth"
+
+	mouse.KeyDown:connect(function(key)
+		if key == "r" then
+			game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()*CFrame.new(0, 0, -1))
+		end
+	end)
+
+	closegui.MouseButton1Up:connect(function()
+		screen:Destroy()
+	end)("Clicked")
+            end)
+
+        local FE = Window:NewTab("Extra FE")
+        local FESection = FE:NewSection("Extra FE")
+        
+       FESection:NewButton("Shirtless FE", "Takes Your Local Shirt FE", function()
+    game:service("Players").LocalPlayer.Character.Shirt:Destroy()("Clicked")
+end)
+
+FESection:NewButton("Fake Dribble Animation", "Fake People", function()
+    AnimationId      = "183294396"
+local Anim       = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k          = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play(0)
+k:AdjustSpeed(1)("Clicked")
+end)
+
+FESection:NewButton("Faceless", "FE Faceless", function()
+    for i,v in pairs(game.Players.LocalPlayer.Character.Head:GetChildren()) do
+if (v:IsA("Decal")) then
+v:Destroy()
+end
+end
+end)
+
+FESection:NewButton("Point Animation", "Just Point FE", function()
+   game.Players:Chat("/e point")("Clicked")
+end)
+
+FESection:NewButton("Reset", "Reset Player", function()
+   game.Players.LocalPlayer.Character:BreakJoints()("Clicked")
+end)
+
+FESection:NewButton("Laugh Animation", "Just Laugh FE", function()
+   game.Players:Chat("/e laugh")("Clicked")
+end)
+
+        local Player = Window:NewTab("Teleports")
+        local PlayerSection = Player:NewSection("Teleports")
+
+        PlayerSection:NewButton(
+            "Rejoin",
+            "Rejoin Server",
+            function()
+                wait(1)
+                game:GetService("TeleportService"):Teleport(6229116934, LocalPlayer)("Clicked")
+            end)
+            
+            PlayerSection:NewButton(
+            "Server Hop",
+            "Teleports To New Server",
+            function()
+                wait(1)
+                game:GetService("TeleportService"):Teleport(6229116934, LocalPlayer)("Clicked")
+            end)
+            
+            PlayerSection:NewButton(
+            "Teleport To A Better Mypark Game",
+            "Teleports To ?!",
+            function()
+                wait(1)
+                game:GetService("TeleportService"):Teleport(7147678922, LocalPlayer)("Clicked")
+            end)
+            
+            local Cams = Window:NewTab("Camera")
+            local CamsSection = Cams:NewSection("Camera")
+            
+            CamsSection:NewButton("Zoom Out Max", "Zoom your Camrea How Far You Would Like It", function()
+   local LocalPlayer = game:GetService("Players").LocalPlayer
+        LocalPlayer.CameraMaxZoomDistance = 9e9
+        LocalPlayer.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam("Clicked")
+end)
+            
+            CamsSection:NewSlider("FOV", "Changes the FOV", 120, 16, function(v)
+            game.Workspace.CurrentCamera.FieldOfView = v
+            end)
+            
+            CamsSection:NewButton("1st Person", "Changes The Camera (YOU CAN STILL ZOOM IN AND OUT",function()
+            game.Players.LocalPlayer.CameraMaxZoomDistance = 2
+            end)
+            
+            CamsSection:NewButton("3rd Person", "Changes The Camera (YOU CAN STILL ZOOM IN AND OUT",function()
+            game.Players.LocalPlayer.CameraMaxZoomDistance = 600
+            end)
+
+            CamsSection:NewButton(
+            "Freecam",
+            "Shift+P and Q and E to go up and down",
+            function()
+                loadstring(game:HttpGet('https://pastebin.com/raw/ss0zUsHE'))()("Clicked")
+            end
+           )
+       
+        local Visuals = Window:NewTab("Visuals")
+        local VisualsSection = Visuals:NewSection("Visuals")
+        
+        VisualsSection:NewButton("Name Generator", "Generates a Random Name FE", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/inik7xjG'))()("Clicked")
+end)
+
+        VisualsSection:NewButton("Trash Talk", "Hold J and It Is FE", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/UgQFnhm4'))()("Clicked")
+    end)
+
+        local Credits = Window:NewTab("Credits")
+        local CreditsSection = Credits:NewSection("Credits")
+        
+        CreditsSection:NewLabel("Made By: Legend HandlesYT")
+        
+        CreditsSection:NewLabel("THANKS FOR USING THIS GUI!")
+       end
